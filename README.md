@@ -4,5 +4,7 @@ Backend: Node Express
 Base de datos: Mongoose
 
 Comandos/Dependencias
+Estilos: Tailwind v4
 
-Tailwind v4
+Rutas: npm i react-router-dom
+
