@@ -7,4 +7,4 @@ Comandos/Dependencias
 Estilos: Tailwind v4
 
 Rutas: npm i react-router-dom
-
+npm i -D @types/node
