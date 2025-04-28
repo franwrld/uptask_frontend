@@ -8,3 +8,11 @@ Estilos: Tailwind v4
 
 Rutas: npm i react-router-dom
 npm i -D @types/node
+
+npm install @headlessui/react@latest
+npm i heroicons
+npm i axios
+npm i zod
+npm i react-toastify
+npm i react-router-dom
+npm i eact-hook-form
