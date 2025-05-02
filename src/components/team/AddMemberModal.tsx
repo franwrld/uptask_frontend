@@ -1,5 +1,5 @@
 import { Fragment } from 'react';
-import { Dialog, Transition } from '@headlessui/react';
+import { Dialog, Transition, TransitionChild, DialogPanel, DialogTitle } from '@headlessui/react';
 import { useLocation, useNavigate } from 'react-router-dom';
 import AddMemberForm from './AddMemberForm';
 
@@ -16,7 +16,7 @@ export default function AddMemberModal() {
         <>
             <Transition appear show={show} as={Fragment}>
                 <Dialog as="div" className="relative z-10" onClose={() => navigate(location.pathname, { replace: true })}>
-                    <Transition.Child
+                    <TransitionChild
                         as={Fragment}
                         enter="ease-out duration-300"
                         enterFrom="opacity-0"
@@ -26,11 +26,11 @@ export default function AddMemberModal() {
                         leaveTo="opacity-0"
                     >
                         <div className="fixed inset-0 bg-black/60" />
-                    </Transition.Child>
+                    </TransitionChild>
 
                     <div className="fixed inset-0 overflow-y-auto">
                         <div className="flex min-h-full items-center justify-center p-4 text-center">
-                            <Transition.Child
+                            <TransitionChild
                                 as={Fragment}
                                 enter="ease-out duration-300"
                                 enterFrom="opacity-0 scale-95"
@@ -39,20 +39,20 @@ export default function AddMemberModal() {
                                 leaveFrom="opacity-100 scale-100"
                                 leaveTo="opacity-0 scale-95"
                             >
-                                <Dialog.Panel className="w-full max-w-4xl transform overflow-hidden rounded-2xl bg-white text-left align-middle shadow-xl transition-all p-16">
-                                    <Dialog.Title
+                                <DialogPanel className="w-full max-w-4xl transform overflow-hidden rounded-2xl bg-white text-left align-middle shadow-xl transition-all p-16">
+                                    <DialogTitle
                                         as="h3"
                                         className="font-black text-4xl  my-5"
                                     >
                                         Agregar Integrante al equipo
-                                    </Dialog.Title>
+                                    </DialogTitle>
                                     <p className="text-xl font-bold">Busca el nuevo integrante por email {''}
                                         <span className="text-fuchsia-600">para agregarlo al proyecto</span>
                                     </p>
                                     <AddMemberForm />
                                     
-                                </Dialog.Panel>
-                            </Transition.Child>
+                                </DialogPanel>
+                            </TransitionChild>
                         </div>
                     </div>
                 </Dialog>

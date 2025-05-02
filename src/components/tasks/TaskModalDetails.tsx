@@ -1,5 +1,5 @@
 import { Fragment } from 'react';
-import { Dialog, Transition } from '@headlessui/react';
+import { Dialog, Transition, TransitionChild, DialogPanel, DialogTitle  } from '@headlessui/react';
 import { Navigate, useLocation, useNavigate, useParams } from 'react-router-dom';
 import { useQuery, useMutation, useQueryClient } from '@tanstack/react-query'
 import { toast } from 'react-toastify';
@@ -54,7 +54,7 @@ export default function TaskModalDetails() {
         <>
             <Transition appear show={show} as={Fragment}>
                 <Dialog as="div" className="relative z-10" onClose={() => navigate(location.pathname, { replace: true })}>
-                    <Transition.Child
+                    <TransitionChild
                         as={Fragment}
                         enter="ease-out duration-300"
                         enterFrom="opacity-0"
@@ -64,11 +64,11 @@ export default function TaskModalDetails() {
                         leaveTo="opacity-0"
                     >
                         <div className="fixed inset-0 bg-black/60" />
-                    </Transition.Child>
+                    </TransitionChild>
 
                     <div className="fixed inset-0 overflow-y-auto">
                         <div className="flex min-h-full items-center justify-center p-4 text-center">
-                            <Transition.Child
+                            <TransitionChild
                                 as={Fragment}
                                 enter="ease-out duration-300"
                                 enterFrom="opacity-0 scale-95"
@@ -77,14 +77,14 @@ export default function TaskModalDetails() {
                                 leaveFrom="opacity-100 scale-100"
                                 leaveTo="opacity-0 scale-95"
                             >
-                                <Dialog.Panel className="w-full max-w-4xl transform overflow-hidden rounded-2xl bg-white text-left align-middle shadow-xl transition-all p-16">
+                                <DialogPanel className="w-full max-w-4xl transform overflow-hidden rounded-2xl bg-white text-left align-middle shadow-xl transition-all p-16">
                                     <p className='text-sm text-slate-400'>Agregada el: {formatDate(data.createdAt)} </p>
                                     <p className='text-sm text-slate-400'>Última actualización: {formatDate(data.updatedAt)} </p>
 
-                                    <Dialog.Title
+                                    <DialogTitle
                                         as="h3"
                                         className="font-black text-4xl text-slate-600 my-5"
-                                    >{data.name} </Dialog.Title>
+                                    >{data.name} </DialogTitle>
 
                                     <p className='text-lg text-slate-500 mb-2'>Descripción: {data.description}</p>
 
@@ -121,8 +121,8 @@ export default function TaskModalDetails() {
                                     <NotesPanel 
                                         notes={data.notes}
                                     />
-                                </Dialog.Panel>
-                            </Transition.Child>
+                                </DialogPanel>
+                            </TransitionChild>
                         </div>
                     </div>
                 </Dialog>
