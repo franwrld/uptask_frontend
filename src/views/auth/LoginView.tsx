@@ -32,7 +32,7 @@ export default function LoginView() {
         <h1 className="text-5xl font-black text-white">Iniciar Sesión</h1>
         <p className="text-2xl font-light text-white mt-5">
             Comienza a planear tus proyectos {''}
-            <span className=" text-fuchsia-500 font-bold"> iniciando sesión en este formulario</span>
+            <span className=" text-emerald-400 font-bold"> iniciando sesión en este formulario</span>
         </p>
 
       <form
@@ -84,14 +84,14 @@ export default function LoginView() {
         <input
           type="submit"
           value='Iniciar Sesión'
-          className="bg-fuchsia-600 hover:bg-fuchsia-700 w-full p-3  text-white font-black  text-xl cursor-pointer"
+          className="bg-emerald-400 hover:bg-emerald-500 w-full p-3  text-white font-black  text-xl cursor-pointer"
         />
       </form>
 
       <nav className="mt-10 flex flex-col space-y-4">
             <Link
                 to={'/auth/register'}
-                className="text-center text-gray-300 font-normal"
+                className="text-center text-yellow-300 font-normal"
             >¿No tienes cuenta? Crear Una</Link>
 
             <Link
