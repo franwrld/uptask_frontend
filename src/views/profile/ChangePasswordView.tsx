@@ -100,7 +100,7 @@ export default function ChangePasswordView() {
           <input
             type="submit"
             value='Cambiar Password'
-            className="bg-fuchsia-600 w-full p-3 text-white uppercase font-bold hover:bg-fuchsia-700 cursor-pointer transition-colors"
+            className="bg-emerald-300 hover:bg-emerald-500 w-full p-3 text-white uppercase font-bold cursor-pointer transition-colors"
           />
         </form>
       </div>

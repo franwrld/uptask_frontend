@@ -34,9 +34,9 @@ export default function AppLayout() {
                 <Outlet />
             </section>
 
-            <footer className="py-5">
+            <footer className="py-5 items-center text-center">
                 <p>
-                    Todos los derechos reservados {new Date().getFullYear()}
+                    &copy; Todos los derechos reservados {new Date().getFullYear()}
                 </p>
             </footer>
             <ToastContainer
