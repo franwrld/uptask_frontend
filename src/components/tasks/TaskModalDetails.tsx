@@ -15,12 +15,12 @@ export default function TaskModalDetails() {
     const navigate = useNavigate()
     const location = useLocation()
     const queryParams = new URLSearchParams(location.search)
-    const taskId = queryParams.get('viewTask')!
 
+    const taskId = queryParams.get('viewTask')!
     const show = taskId ? true : false
 
     const { data, isError, error } = useQuery({
-        queryKey: ['task', taskId],
+        queryKey: ['viewTask', taskId],
         queryFn: () => getTaskById({ projectId, taskId }),
         enabled: !!taskId,
         retry: false

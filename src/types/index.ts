@@ -60,7 +60,7 @@ export const taskSchema = z.object({
         createdBy: userSchema
     })),
     createdAt: z.string(),
-    updatedAt: z.string()
+    updatedAt: z.string(),
 })
 
 export const taskProjectSchema = taskSchema.pick({
